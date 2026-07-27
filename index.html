@@ -1,0 +1,537 @@
+<!Doctype html>
+<html lang="fr">
+<head>
+    <link rel="stylesheet" href="priseenmaincss.css">
+    <meta charset="utf-8">
+    <title>Prise en main du html et du css</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+
+<header>
+    <div class="avatar">OU</div>
+    <div class="entete-texte">
+        <h1>Prise en main du HTML et du CSS</h1>
+        <p class="tagline">J'apprends le code avec un regard de statisticien, et je partage tout ce que j'apprends.</p>
+    </div>
+</header>
+
+<h1 class="couleur_br">Introduction</h1>
+
+<p>Le but de ce cours est de vous apprendre un peu plus sur le HTML5 et le CSS3. Outre cela, je vais également
+    vous montrer la logique et les mécanismes derrière ces deux langages afin que vous compreniez ce que vous faites et que vous deveniez
+    vite autonomes. <br>
+    Ce cours est divisé en plusieurs parties :
+</p>
+<ul>
+    <li>Une première partie concernera le HTML5 (avec tous les ingrédients nécessaires).</li>
+    <li>Une deuxième partie concernera le CSS3 (avec toutes les manières possibles de mettre en forme vos pages).</li>
+    <li>Une troisième partie ajoutera quelques notions plus modernes (formulaires, tableaux, Flexbox, Grid).</li>
+    <li>Une dernière partie proposera quelques exercices pratiques.</li>
+</ul>
+
+<p>Au fil de ce cours vous aurez droit à des exemples précis d'utilisation.</p>
+
+<h2 class="p1">Sommaire</h2>
+<nav>
+    <ol>
+        <li><a href="#intro-html">HTML : description et propriétés</a></li>
+        <li><a href="#intro-css">CSS : description et propriétés</a></li>
+        <li><a href="#html5-avance">HTML5 avancé : formulaires et tableaux</a></li>
+        <li><a href="#css-moderne">CSS moderne : Flexbox et Grid</a></li>
+        <li><a href="#erreurs">Erreurs fréquentes à éviter</a></li>
+        <li><a href="#faq">Foire aux questions (FAQ)</a></li>
+        <li><a href="#exercices">Exercices pratiques</a></li>
+    </ol>
+</nav>
+
+<div>
+    <p class="P2">A qui s'adresse ce cours ?</p>
+    <p>Les langages HTML et CSS sont, comme nous allons le voir, à la base de tout projet de programmation informatique.
+        Plutôt simples à maîtriser et à comprendre, ce cours s'adresse à tous, tout en offrant une assez bonne clarté dans les notions abordées.
+    </p>
+    <p class="P2">A propos de l'auteur</p>
+    <p>Je suis OUATTARA Ulrich, étudiant en Statistique et Informatique (en Économie également), passionné par l'entrepreneuriat et la technologie, désirant une carrière comparable
+        à celles des plus grands (car l'ambition y est). Diplômé d'un baccalauréat scientifique (Bac D), j'ai poursuivi mes études à l'Université Nazi Boni de Bobo-Dioulasso et j'y suis
+        encore étudiant en deuxième année au jour de la publication de ce site.
+    </p>
+    <p class="P2">J'espère être à la hauteur de vos attentes.</p>
+</div>
+<br>
+
+<h3 class="P3">Pourquoi apprendre les langages HTML et CSS ?</h3>
+<p>Tout d'abord, pour tout passionné d'informatique, il faut savoir que le HTML et le CSS sont deux véritables standards et n'ont donc, à ce titre, aucun concurrent.
+   Ensuite, il faut noter que ces deux langages sont le socle de tout projet de développement web. Que vous vouliez créer un site, une application mobile, un blog ou autre,
+   vous serez obligé de passer par les langages HTML et CSS.
+</p>
+<p>Cependant, il existe des moyens encore plus faciles pour obtenir du HTML ou du CSS grâce à des solutions toutes faites comme les frameworks (<span>WordPress, PrestaShop</span>), des éditeurs WYSIWYG (<span>What You See Is What You Get</span>)
+    ou encore le recours aux services d'une agence spécialisée. <br>
+    Mais vous êtes-vous déjà demandé : si jamais je rencontre des difficultés, qui va s'en occuper ? Devrais-je encore dépenser de l'argent ? Ou devrais-je arriver à le résoudre tout seul ?
+</p>
+<p>Je ne pense pas qu'utiliser des moyens rapides et fiables soit une mauvaise chose, mais si vous comprenez déjà le HTML ou le CSS avant de faire appel à ces solutions miracles, cela vous épargnera bien des tracas à l'avenir en cas de panne avec
+    votre site.</p>
+<p>Finalement, apprendre le HTML et le CSS c'est avoir un socle pour comprendre comment fonctionne son site et ainsi pouvoir le modifier ou corriger des problèmes à l'avenir.
+    Ainsi, il ne faut pas oublier qu'on ne devient pas athlète professionnel sur un coup de tête, mais en faisant des exercices constants, en apprenant et en échouant. Si vous cherchez à comprendre comment ça fonctionne plutôt qu'à rechercher uniquement le résultat,
+    alors vous battrez le plus grand nombre de vos concurrents.
+    Si vous êtes motivé et convaincu, alors passons aux choses sérieuses.
+</p>
+
+<h3 class="P3">Une image simple pour bien comprendre</h3>
+<p>Avant d'entrer dans le vif du sujet, voici une image qui parle à tout le monde, même sans aucune notion de programmation : imaginez que vous construisez une maison.</p>
+<p>Le <span>HTML</span>, c'est le squelette de la maison : les murs, les pièces, les portes, les fenêtres. Il donne la structure et dit "ici il y a un salon, ici une chambre, ici la porte d'entrée". Sans lui, il n'y a tout simplement rien à construire.</p>
+<p>Le <span>CSS</span>, c'est la décoration et la peinture : la couleur des murs, le style des meubles, l'agencement de la lumière. Il ne change rien à la structure de la maison, mais il change complètement l'expérience qu'on en a.</p>
+<p>Retenez donc ceci tout au long du cours : quand vous écrivez du HTML, vous construisez ; quand vous écrivez du CSS, vous décorez. Les deux sont indispensables, mais ils n'ont pas le même rôle, et c'est une confusion fréquente chez les débutants de vouloir "décorer" avec du HTML ou "structurer" avec du CSS.</p>
+
+<h1 class="couleur" id="intro-html"><strong>HTML : Description et Propriétés</strong></h1>
+
+<p class="p0">Description :</p>
+<p>
+    Le <span>HTML (HyperText Markup Language ou langage hypertexte de balisage)</span> est un langage créé en 1991 et a pour fonction de structurer et de donner du sens à du contenu. Il est utilisé pour baliser un contenu, c'est-à-dire pour le structurer et lui donner du sens, et ne doit jamais
+    remplacer les fonctions du CSS (qui sert à faire la mise en forme d'un document). Le HTML sert donc à indiquer aux navigateurs quel texte doit être considéré comme un paragraphe, comme un titre, ou que tel contenu est une image ou une vidéo.
+</p>
+<p class="p0">Fonctionnement général :</p>
+<ol>
+    <li class="sps"><span class="titre-sps">Éléments, balises et attributs</span>
+        <p>Il y a trois termes dont vous devez connaître le sens en HTML. Ce sont les termes élément, balise et attribut.</p>
+        <p>Les <span>éléments</span> vont tout d'abord nous servir à définir un paragraphe (élément p), des titres d'importances diverses (élément h1, h2, h3, etc.) ou un lien (élément a).</p>
+        <p>Un élément est constitué de balises. Dans la majorité des cas, un élément est constitué d'une balise ouvrante et d'une balise fermante. <br>
+           <span>Exemple</span> : <code>&lt;p&gt;Contenu du paragraphe&lt;/p&gt;</code></p>
+        <p>Nous remarquerons que dans la balise fermante il y a un slash qui précède le nom de l'élément.</p>
+        <p>Cependant, certains éléments ne sont constitués que d'une seule balise ouvrante ; c'est le cas du retour à la ligne, br, qui s'écrit <code>&lt;br/&gt;</code>. <br>
+           À noter que dans le cas d'une balise orpheline, le slash n'est pas obligatoire et est souvent omis par certains développeurs. Il est cependant conseillé de le mettre, pour des raisons de propreté du code et de compréhension dans un premier temps.</p>
+        <p>Les attributs, enfin, viennent compléter les éléments en leur donnant des indications ou des instructions supplémentaires. <br>
+           Par exemple, dans le cas d'un lien, on se sert d'un attribut pour indiquer la cible du lien, c'est-à-dire vers quel site le lien doit mener. Notez que les attributs se placent toujours à l'intérieur de la balise ouvrante d'un élément (ou de la balise orpheline le cas échéant).</p>
+        <p><span>Exemple</span> : <code>&lt;a href="https://wikipedia.org"&gt;Cliquez ici pour aller sur Wikipedia&lt;/a&gt;</code> <br>
+            Ici on distingue l'élément, composé :</p>
+        <ul>
+            <li>d'une balise ouvrante elle-même composée d'un attribut href ;</li>
+            <li>d'une ancre textuelle ;</li>
+            <li>d'une balise fermante.</li>
+        </ul>
+        <p>
+            Ainsi, l'attribut href indique au navigateur que le lien doit mener vers le site Wikipedia. L'ancre textuelle correspond au texte "Cliquez ici pour aller sur Wikipedia", qui est également l'unique partie visible du lien. <br>
+            (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/a" target="_blank" rel="noopener">voir un exemple de lien</a>)
+        </p>
+        <p>Il existe de nombreux attributs différents, et certains éléments peuvent en avoir plusieurs. Par exemple, l'élément image (img) peut avoir les attributs src (pour indiquer la source de l'image), alt (pour fournir un texte alternatif si l'image ne peut pas être affichée), width et height (pour définir la largeur et la hauteur de l'image). <br>
+           <span>Exemple</span> : <code>&lt;img src="image.jpg" alt="Description de l'image" width="300" height="200"&gt;</code> <br>
+        </p>
+        <p>Ici, l'élément img est composé d'une balise ouvrante avec plusieurs attributs (src, alt, width et height), et il n'a pas de balise fermante car c'est un élément orphelin. <br>
+           (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/img" target="_blank" rel="noopener">voir un exemple de balise img</a>)</p>
+        <p>En résumé, les éléments, les balises et les attributs sont des concepts fondamentaux en HTML. Les éléments sont les composants de base d'un document HTML, les balises sont utilisées pour délimiter ces éléments, et les attributs fournissent des informations supplémentaires sur les éléments. En comprenant ces concepts, vous serez en mesure de créer des pages web structurées et fonctionnelles.
+        </p>
+    </li>
+
+    <li class="sps"><span class="titre-sps">Structure de base d'une page en HTML5</span>
+        <p>En HTML5, la structure de base d'une page comprend plusieurs éléments essentiels :</p>
+        <ul>
+            <li><span>&lt;!doctype html&gt;</span> qui est la déclaration de type de document. Notez bien que cette déclaration doit être placée en première ligne du document et que le point d'exclamation est obligatoire.</li>
+            <li><span>&lt;html&gt;</span> : balise racine de la page. Elle contient l'attribut lang pour spécifier la langue de la page et contient toute la page. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/html" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;head&gt;</span> : contient les métadonnées de la page, comme le titre et les liens vers les fichiers CSS. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/head" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;body&gt;</span> : contient le contenu visible de la page (paragraphe, div, image, etc.). (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/body" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;header&gt;</span> : représente l'en-tête de la page, généralement utilisé pour le logo et la navigation. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/header" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;main&gt;</span> : contient le contenu principal de la page. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/main" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;footer&gt;</span> : représente le pied de page, généralement utilisé pour les informations de copyright et les liens vers les politiques de confidentialité. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/footer" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;section&gt;</span> : représente une section de contenu thématique. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/section" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;article&gt;</span> : représente un article indépendant, comme un billet de blog ou une actualité. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/article" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;aside&gt;</span> : représente un contenu secondaire, comme une barre latérale ou des informations complémentaires. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/aside" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;nav&gt;</span> : représente la navigation principale de la page, généralement utilisée pour les menus de navigation. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/nav" target="_blank" rel="noopener">voir un exemple</a>)</li>
+            <li><span>&lt;br&gt;</span> : pour le retour à la ligne. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/br" target="_blank" rel="noopener">voir un exemple</a>)</li>
+        </ul>
+        <p><span>Astuce</span> : sur chaque page MDN ci-dessus, la section "Exemples" affiche à la fois le code HTML et son rendu visuel réel dans le navigateur — idéal pour bien visualiser comment chaque élément s'utilise.</p>
+        <p>Pour créer une page HTML5 de base, vous pouvez utiliser la structure suivante :</p>
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="fr"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        <p><span>Remarque</span> : pour visualiser votre document HTML5, vous pouvez simplement l'ouvrir dans un navigateur web après l'avoir enregistré. Mais pour ceux qui utilisent des outils de développement, il est possible de voir les modifications en temps réel.</p>
+    </li>
+
+    <li class="sps"><span class="titre-sps">Quelques bonnes pratiques, règles et commentaires</span>
+        <p>Premièrement, vous aurez sans doute remarqué que le HTML permet d'imbriquer les éléments les uns à l'intérieur des autres ; vous devriez alors faire attention à bien refermer les balises dans le bon ordre. <br>
+           <span>Exemple : &lt;a&gt;&lt;b&gt;&lt;/b&gt;&lt;/a&gt;</span></p>
+        <p>Deuxièmement, pensez à toujours indenter vos codes, c'est-à-dire à aérer en ajoutant des espaces au début de certaines lignes afin de rendre le code lisible.</p>
+        <p>Troisièmement, ajoutez des commentaires dans vos codes, ce qui vous permettra de vous situer dans votre travail. <br>
+           <span>Exemple : &lt;!-- Moi je suis un commentaire, invisible sur la page sauf dans le code --&gt;</span></p>
+    </li>
+
+    <li class="sps"><span class="titre-sps">Quelques éléments en HTML</span>
+        <dl>
+            <dt>Strong</dt>
+            <dd>L'élément strong est tout d'abord utilisé pour indiquer aux moteurs de recherche qu'un contenu est particulièrement important, il sera alors traité avec plus d'importance. Le rendu visuel est une mise en forme automatique en gras. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/strong" target="_blank" rel="noopener">voir un exemple</a>)</dd>
+            <dt>Em</dt>
+            <dd>Cet élément, pour "emphasis", proche de strong, sert à signifier qu'un contenu est important mais moins important que le strong. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/em" target="_blank" rel="noopener">voir un exemple</a>)</dd>
+            <dt>Mark</dt>
+            <dd>Enfin, l'élément mark est utilisé pour faire ressortir du contenu. Ce contenu ne sera pas forcément considéré comme important, mais cette balise peut servir dans le cas de l'affichage de résultats suite à une recherche d'un de vos visiteurs par exemple. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/mark" target="_blank" rel="noopener">voir un exemple</a>)</dd>
+        </dl>
+    </li>
+
+    <li class="sps"><span class="titre-sps">Éléments en bloc et éléments en ligne</span>
+        <p>C'est une notion qu'on n'explique pas toujours aux débutants, mais qui évite bien des maux de tête : chaque élément HTML se comporte soit comme un élément de bloc, soit comme un élément en ligne.</p>
+        <p>Un <span>élément de bloc</span> (comme p, div, h1, ul, table) prend toute la largeur disponible et commence toujours sur une nouvelle ligne, un peu comme un paragraphe dans un livre. Deux éléments de bloc ne se placent jamais côte à côte par défaut.</p>
+        <p>Un <span>élément en ligne</span> (comme span, a, strong, em, img) ne prend que la place nécessaire à son contenu et reste sur la même ligne que ce qui l'entoure, un peu comme un mot au milieu d'une phrase.</p>
+        <p><span>Exemple</span> : <code>&lt;div&gt;Bloc 1&lt;/div&gt;&lt;div&gt;Bloc 2&lt;/div&gt;</code> affichera "Bloc 1" et "Bloc 2" l'un en dessous de l'autre, alors que <code>&lt;span&gt;Ligne 1&lt;/span&gt;&lt;span&gt;Ligne 2&lt;/span&gt;</code> affichera "Ligne 1 Ligne 2" côte à côte.</p>
+        <p>Retenez cette règle simple : si vous voulez organiser la structure générale de la page (colonnes, sections), pensez "bloc" ; si vous voulez habiller un simple mot ou une portion de texte au milieu d'une phrase, pensez "en ligne". (<a href="https://developer.mozilla.org/fr/docs/Glossary/Block-level_content" target="_blank" rel="noopener">en savoir plus</a>)</p>
+    </li>
+</ol>
+
+<h1 class="couleur_blue" id="intro-css"><strong>CSS : Description et Propriétés</strong></h1>
+
+<p class="p1">Description :</p>
+<p>
+    Le <span>CSS (Cascading Style Sheets ou feuilles de style en cascade)</span> est un langage de style qui permet de mettre en forme un document HTML. Il permet de séparer le contenu (HTML) de la mise en forme, facilitant ainsi la maintenance et l'adaptation du design sur différentes plateformes. Par exemple, grâce aux éléments tels que class et id, on peut définir le style de nos textes, les caractères ainsi que la mise en forme.
+    <br>
+    Le CSS possède plusieurs propriétés et c'est cela qui le rend si essentiel dans l'élaboration d'un site.
+</p>
+
+<p><span>Fonctionnement général :</span> lorsqu'un document HTML est chargé dans un navigateur, le CSS est utilisé pour appliquer les styles définis aux éléments du document. Il suit plusieurs étapes pour appliquer ces styles :</p>
+<ol>
+    <li><span>Chargement du document HTML</span> et création du <span>DOM (Document Object Model)</span>, une structure arborescente représentant les éléments du document.</li>
+    <li><span>Récupération et interprétation du CSS</span>, puis <span>classement des règles</span> par type de sélecteur (élément, classe, id, pseudo-élément, pseudo-classe, etc.)</li>
+    <li><span>Association des règles CSS aux nœuds du DOM</span> pour former l'arbre de rendu (render tree).</li>
+    <li><span>Calcul du rendu visuel</span> et <span>affichage du contenu à l'écran</span> en fonction des styles appliqués.</li>
+</ol>
+
+<p><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties">Lien vers les descriptions du CSS</a></p>
+
+<img src="photoCss.jpg" alt="Image de CSS" class="photoCss">
+
+<h2 class="p1">Propriétés CSS</h2>
+
+<h3 class="p1">Termes clés</h3>
+<dl>
+    <dt>Sélecteur</dt>
+    <dd>Un sélecteur est un motif qui permet de cibler les éléments HTML auxquels on souhaite appliquer des styles. Il peut s'agir d'un nom d'élément, d'une classe ou d'un identifiant.</dd>
+
+    <dt>Propriété</dt>
+    <dd>Une propriété est un aspect spécifique d'un élément HTML que l'on souhaite modifier, comme la couleur, la taille de la police, la marge, etc.</dd>
+
+    <dt>Valeur</dt>
+    <dd>Une valeur est celle que l'on attribue à une propriété pour définir son style. Par exemple, pour la propriété "color", la valeur pourrait être "red" pour définir la couleur du texte en rouge.</dd>
+
+    <dt>Règle CSS</dt>
+    <dd>Une règle CSS est une combinaison d'un sélecteur, d'une propriété et d'une valeur qui définit comment un élément HTML doit être stylisé. Par exemple, "p { color: red; }" est une règle CSS qui applique la couleur rouge à tous les éléments de paragraphe.</dd>
+</dl>
+
+<h3 class="p1">Les différents types de sélecteurs CSS</h3>
+<dl>
+    <dt>Sélecteur de balises</dt>
+    <dd>
+        Ils ciblent les éléments HTML en fonction de leur nom de balise. Par exemple, si vous souhaitez appliquer un style à tous les paragraphes d'une page, vous utiliserez le sélecteur de balise "p".
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+p { color: blue; font-size: 16px; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p&gt;Ce paragraphe sera affiché en bleu...&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </dd>
+
+    <dt>Sélecteur d'identifiants</dt>
+    <dd>
+        Ces sélecteurs ciblent les éléments HTML par leur "id" unique. Vous pouvez les identifier en utilisant le symbole dièse "#" suivi de l'identifiant de l'élément. Par exemple, si vous avez un élément avec l'id "header", vous pouvez utiliser le sélecteur "#header" pour appliquer des styles à cet élément spécifique.
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+#header { background-color: lightblue; padding: 10px; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;div id="header"&gt;Ceci est l'en-tête&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </dd>
+
+    <dt>Sélecteur de classes</dt>
+    <dd>
+        Ces sélecteurs ciblent les éléments HTML en fonction de leur classe. Vous pouvez les identifier en utilisant le symbole point "." suivi du nom de la classe. Par exemple, si vous avez plusieurs éléments avec la classe "highlight", vous pouvez utiliser le sélecteur ".highlight" pour appliquer des styles à tous ces éléments.
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+.highlight { color: red; font-weight: bold; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;p class="highlight"&gt;Ce texte sera affiché en rouge et en gras.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </dd>
+
+    <dt>Sélecteur d'attributs</dt>
+    <dd>
+        Ces sélecteurs ciblent les éléments HTML en fonction de la présence ou de la valeur d'un attribut spécifique. Vous pouvez les identifier en utilisant des crochets "[ ]" autour du nom de l'attribut. Par exemple, si vous souhaitez cibler tous les éléments de lien qui ont un attribut "target" égal à "_blank", vous pouvez utiliser le sélecteur "[target='_blank']".
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+[target='_blank'] { color: green; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;a href="https://www.example.com" target="_blank"&gt;Lien vers un site externe&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </dd>
+
+    <dt>Sélecteur de pseudo-classes</dt>
+    <dd>
+        Ces sélecteurs ciblent les éléments HTML en fonction de leur état ou de leur position dans le document. Vous pouvez les identifier en utilisant deux points ":" suivis du nom de la pseudo-classe. Par exemple, si vous souhaitez appliquer un style aux liens lorsqu'ils sont survolés par la souris, vous pouvez utiliser le sélecteur "a:hover".
+        <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;style&gt;
+a:hover { text-decoration: underline; }
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;a href="https://www.example.com"&gt;Lien vers un site externe&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </dd>
+</dl>
+
+<h3 class="p1">Les propriétés du CSS</h3>
+<p>Le CSS possède plusieurs propriétés qui permettent de mettre en forme les éléments d'un document HTML. Parmi ces propriétés on peut citer :</p>
+<ul>
+    <li>La couleur des textes</li>
+    <li>La taille des textes</li>
+    <li>La police des textes</li>
+    <li>L'alignement des textes</li>
+    <li>Les marges et les espacements</li>
+    <li>Les bordures et les arrière-plans</li>
+    <li>Les effets de transition et d'animation</li>
+</ul>
+
+<dl>
+    <dt>color</dt>
+    <dd>La propriété "color" permet de définir la couleur du texte d'un élément HTML. Vous pouvez spécifier la couleur en utilisant des noms de couleurs prédéfinis, des valeurs hexadécimales, des valeurs RGB ou HSL. Par exemple, pour définir la couleur du texte en rouge, vous pouvez utiliser la règle CSS suivante : "color: red;"</dd>
+
+    <dt>font-size</dt>
+    <dd>La propriété "font-size" permet de définir la taille du texte d'un élément HTML. Vous pouvez spécifier la taille en utilisant des unités de mesure comme les pixels (px), les points (pt), les pourcentages (%), ou les ems (em). Par exemple, pour définir la taille du texte à 16 pixels, vous pouvez utiliser la règle CSS suivante : "font-size: 16px;"</dd>
+
+    <dt>font-family</dt>
+    <dd>La propriété "font-family" permet de définir la police de caractères utilisée pour le texte d'un élément HTML. Vous pouvez spécifier une ou plusieurs polices de caractères, séparées par des virgules, et le navigateur utilisera la première police disponible sur l'appareil de l'utilisateur. Par exemple, pour définir la police en utilisant "Arial" comme première option et "Helvetica" comme deuxième option, vous pouvez utiliser la règle CSS suivante : "font-family: Arial, Helvetica, sans-serif;"</dd>
+
+    <dt>text-align</dt>
+    <dd>La propriété "text-align" permet de définir l'alignement du texte d'un élément HTML. Vous pouvez spécifier l'alignement en utilisant les valeurs "left", "right", "center" ou "justify". Par exemple, pour aligner le texte à gauche, vous pouvez utiliser la règle CSS suivante : "text-align: left;"</dd>
+
+    <dt>font-style</dt>
+    <dd>La propriété "font-style" permet de définir le style de la police de caractères utilisée pour le texte d'un élément HTML. Vous pouvez spécifier le style en utilisant les valeurs "normal", "italic" ou "oblique". Par exemple, pour définir le style de la police en italique, vous pouvez utiliser la règle CSS suivante : "font-style: italic;"</dd>
+
+    <dt>font-weight</dt>
+    <dd>La propriété "font-weight" permet de définir l'épaisseur du texte d'un élément HTML. Vous pouvez spécifier l'épaisseur en utilisant les valeurs "normal", "bold", ou des nombres entre 100 et 900. Par exemple, pour définir l'épaisseur du texte en gras, vous pouvez utiliser la règle CSS suivante : "font-weight: bold;"</dd>
+
+    <dt>text-decoration</dt>
+    <dd>La propriété "text-decoration" permet de définir la décoration du texte d'un élément HTML. Vous pouvez spécifier la décoration en utilisant les valeurs "none", "underline", "overline", ou "line-through". Par exemple, pour définir un soulignement sur le texte, vous pouvez utiliser la règle CSS suivante : "text-decoration: underline;"</dd>
+
+    <dt>text-transform</dt>
+    <dd>La propriété "text-transform" permet de définir la transformation du texte d'un élément HTML. Vous pouvez spécifier la transformation en utilisant les valeurs "none", "lowercase", "uppercase", ou "capitalize". Par exemple, pour transformer le texte en majuscules, vous pouvez utiliser la règle CSS suivante : "text-transform: uppercase;"</dd>
+</dl>
+
+<h2 class="p1">Le modèle de boîte (box model)</h2>
+<p>Voici, à mon avis, la notion la plus importante à bien comprendre en CSS, car elle explique pourquoi vos éléments ne se placent pas toujours comme vous l'espérez. En CSS, chaque élément HTML est en réalité une boîte rectangulaire, composée de quatre couches, de l'intérieur vers l'extérieur :</p>
+<dl>
+    <dt>Content (le contenu)</dt>
+    <dd>C'est le texte, l'image ou tout autre contenu de l'élément. Sa taille se définit avec les propriétés "width" et "height".</dd>
+
+    <dt>Padding (l'espacement intérieur)</dt>
+    <dd>C'est l'espace entre le contenu et la bordure de la boîte. Plus le padding est grand, plus le contenu "respire" à l'intérieur de sa boîte. Exemple : "padding: 10px;"</dd>
+
+    <dt>Border (la bordure)</dt>
+    <dd>C'est le trait qui entoure le padding et le contenu. Elle peut avoir une épaisseur, un style et une couleur. Exemple : "border: 1px solid black;"</dd>
+
+    <dt>Margin (la marge extérieure)</dt>
+    <dd>C'est l'espace entre la boîte et les autres éléments autour d'elle. Elle sert à créer de la distance entre les blocs, sans affecter leur taille interne. Exemple : "margin: 20px;"</dd>
+</dl>
+<p><span>Image pour retenir</span> : imaginez un cadre photo posé sur un mur. La photo, c'est le content. Le passe-partout blanc autour de la photo, c'est le padding. Le cadre en bois, c'est le border. Et l'espace que vous laissez entre ce cadre et le prochain tableau sur le mur, c'est le margin. (<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_box_model/Introduction_to_the_CSS_box_model" target="_blank" rel="noopener">voir un exemple visuel</a>)</p>
+
+<h2 class="p1">Les unités de mesure en CSS</h2>
+<p>Une question que je me suis longtemps posée en débutant : quelle unité utiliser pour la taille des textes, des marges ou des largeurs ? Voici les plus courantes :</p>
+<dl>
+    <dt>px (pixels)</dt>
+    <dd>Une unité fixe, la même quelle que soit la taille de l'écran ou les réglages de l'utilisateur. Simple à utiliser, mais moins flexible pour l'accessibilité.</dd>
+
+    <dt>% (pourcentage)</dt>
+    <dd>Une unité relative à la taille de l'élément parent. Par exemple, "width: 50%;" signifie la moitié de la largeur du conteneur parent.</dd>
+
+    <dt>em</dt>
+    <dd>Une unité relative à la taille de police de l'élément parent. Si le parent a une police de 16px, alors "1em" vaut 16px, et "2em" vaut 32px.</dd>
+
+    <dt>rem</dt>
+    <dd>Très proche de em, mais toujours relative à la taille de police de l'élément racine (html), ce qui la rend plus prévisible sur un site entier. C'est souvent l'unité recommandée pour les tailles de police.</dd>
+
+    <dt>vw et vh</dt>
+    <dd>Relatives à la taille de la fenêtre du navigateur : 1vw correspond à 1% de la largeur de la fenêtre, et 1vh à 1% de sa hauteur. Très utiles pour des mises en page qui occupent tout l'écran.</dd>
+</dl>
+
+<h2 class="p1">Les notations de couleurs</h2>
+<dl>
+    <dt>Couleurs prédéfinies</dt>
+    <dd>Ces mots-clés sont généralement des noms descriptifs des couleurs tels que "red (rouge)", "blue (bleu)", "green (vert)", etc., reconnus par les navigateurs web.</dd>
+
+    <dt>Couleurs hexadécimales</dt>
+    <dd>Ces couleurs sont représentées par un code hexadécimal à six chiffres précédé du symbole dièse "#". Chaque paire de chiffres représente l'intensité des composantes rouge, verte et bleue de la couleur. Par exemple, le code hexadécimal "#FF0000" représente la couleur rouge pur.</dd>
+
+    <dt>Couleurs RVB (RGB)</dt>
+    <dd>Ces couleurs sont définies en utilisant le modèle de couleur RVB (Rouge, Vert, Bleu). Vous spécifiez les valeurs de chaque composante de couleur en utilisant des nombres compris entre 0 et 255. Par exemple, la couleur rouge pur peut être représentée par "rgb(255, 0, 0)".</dd>
+
+    <dt>Couleur système</dt>
+    <dd>Ce sont des mots-clés spécifiques au système pour représenter des couleurs qui s'adaptent à l'interface utilisateur du système d'exploitation. Par exemple, vous pouvez utiliser "ButtonFace" pour obtenir la couleur de fond des boutons dans l'interface utilisateur du système.</dd>
+
+    <dt>Couleurs transparentes</dt>
+    <dd>Cela permet de créer des éléments avec des parties visibles et d'autres parties transparentes.</dd>
+</dl>
+
+<p><a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference/Properties">Lien vers les propriétés CSS</a></p>
+
+<!-- ===================== AJOUTS ===================== -->
+
+<h1 class="couleur" id="html5-avance"><strong>HTML5 avancé : formulaires et tableaux</strong></h1>
+
+<h2 class="p1">Les formulaires</h2>
+<p>L'élément <span>&lt;form&gt;</span> permet de créer des formulaires pour recueillir des informations auprès des visiteurs (contact, inscription, recherche, etc.). Il se combine avec des champs comme <span>&lt;input&gt;</span>, <span>&lt;label&gt;</span>, <span>&lt;textarea&gt;</span> et <span>&lt;button&gt;</span>.</p>
+<pre><code>&lt;form action="/envoyer" method="post"&gt;
+    &lt;label for="nom"&gt;Nom :&lt;/label&gt;
+    &lt;input type="text" id="nom" name="nom" required&gt;
+
+    &lt;label for="email"&gt;Email :&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+
+    &lt;label for="message"&gt;Message :&lt;/label&gt;
+    &lt;textarea id="message" name="message" rows="4"&gt;&lt;/textarea&gt;
+
+    &lt;button type="submit"&gt;Envoyer&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+<p>L'attribut <span>required</span> empêche l'envoi du formulaire si le champ est vide, et le type <span>email</span> demande au navigateur de vérifier automatiquement le format de l'adresse saisie. (<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/form" target="_blank" rel="noopener">voir un exemple de formulaire</a>)</p>
+
+<h2 class="p1">Les tableaux</h2>
+<p>L'élément <span>&lt;table&gt;</span> permet d'afficher des données organisées en lignes et en colonnes, à l'aide des balises <span>&lt;tr&gt;</span> (ligne), <span>&lt;th&gt;</span> (en-tête de colonne) et <span>&lt;td&gt;</span> (cellule).</p>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Langage&lt;/th&gt;
+            &lt;th&gt;Rôle&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;HTML&lt;/td&gt;
+            &lt;td&gt;Structure du contenu&lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;tr&gt;
+            &lt;td&gt;CSS&lt;/td&gt;
+            &lt;td&gt;Mise en forme&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+<p>(<a href="https://developer.mozilla.org/fr/docs/Web/HTML/Reference/Elements/table" target="_blank" rel="noopener">voir un exemple de tableau</a>)</p>
+
+<h1 class="couleur_blue" id="css-moderne"><strong>CSS moderne : Flexbox et Grid</strong></h1>
+
+<h2 class="p1">Flexbox</h2>
+<p>Flexbox est un modèle de mise en page unidimensionnel (en ligne ou en colonne) qui facilite l'alignement et la répartition de l'espace entre les éléments d'un conteneur, même quand leur taille est inconnue ou variable.</p>
+<pre><code>.conteneur {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+}</code></pre>
+<p>Ici, <span>justify-content</span> répartit les éléments horizontalement, <span>align-items</span> les aligne verticalement, et <span>gap</span> ajoute un espace régulier entre eux.</p>
+
+<h2 class="p1">Grid</h2>
+<p>CSS Grid est un modèle de mise en page bidimensionnel (lignes et colonnes en même temps), idéal pour construire des structures de page entières.</p>
+<pre><code>.grille {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}</code></pre>
+<p>Cette règle crée une grille de trois colonnes de largeur égale, avec un espacement de 20 pixels entre chaque élément.</p>
+
+<h2 class="p1">Le responsive design</h2>
+<p>Pour adapter une page à différentes tailles d'écran, on utilise des <span>media queries</span> :</p>
+<pre><code>@media (max-width: 600px) {
+    .conteneur {
+        flex-direction: column;
+    }
+}</code></pre>
+<p>Ici, sur un écran de moins de 600 pixels de large (comme un téléphone), les éléments du conteneur passeront d'un affichage en ligne à un affichage en colonne.</p>
+
+<h1 class="couleur_blue" id="erreurs"><strong>Erreurs fréquentes à éviter</strong></h1>
+<p>Pour finir sur une note utile à tous, voici quelques erreurs que j'ai moi-même faites en débutant, et que je vois très souvent chez les nouveaux venus :</p>
+<dl>
+    <dt>Oublier de fermer une balise</dt>
+    <dd>Une balise ouvrante sans balise fermante correspondante peut casser toute la mise en page qui suit. Pensez à toujours vérifier vos balises ouvrantes et fermantes, surtout dans les structures imbriquées.</dd>
+
+    <dt>Mettre un élément de bloc à l'intérieur d'un élément en ligne</dt>
+    <dd>Par exemple, mettre un <span>&lt;div&gt;</span> à l'intérieur d'un <span>&lt;span&gt;</span> ou d'un <span>&lt;p&gt;</span> n'est pas valide et peut provoquer un rendu inattendu selon les navigateurs.</dd>
+
+    <dt>Utiliser des balises pour leur apparence plutôt que pour leur sens</dt>
+    <dd>Par exemple, utiliser un <span>&lt;h3&gt;</span> uniquement parce qu'il est petit et gras, sans que ce soit réellement un titre. Il vaut mieux utiliser la bonne balise sémantique puis ajuster l'apparence avec le CSS.</dd>
+
+    <dt>Confondre padding et margin</dt>
+    <dd>Le padding agit à l'intérieur de la boîte (entre le contenu et la bordure), la margin agit à l'extérieur (entre la boîte et ses voisins). Confondre les deux est l'une des erreurs les plus courantes chez les débutants en CSS.</dd>
+
+    <dt>Ne pas indenter son code</dt>
+    <dd>Un code non indenté est très difficile à relire, même pour son propre auteur quelques semaines plus tard. Prenez l'habitude d'indenter dès le début, cela vous fera gagner beaucoup de temps.</dd>
+
+    <dt>Oublier l'attribut alt sur les images</dt>
+    <dd>L'attribut alt n'est pas juste une formalité : il permet aux personnes malvoyantes d'avoir une description de l'image via un lecteur d'écran, et s'affiche si l'image ne charge pas.</dd>
+</dl>
+
+<h1 class="couleur" id="faq"><strong>Foire aux questions (FAQ)</strong></h1>
+<dl>
+    <dt>Dois-je apprendre le HTML et le CSS en même temps ?</dt>
+    <dd>Oui, je le recommande. Le HTML seul est assez fade à pratiquer, et voir immédiatement l'effet du CSS sur ce que vous venez d'écrire en HTML aide beaucoup à rester motivé.</dd>
+
+    <dt>Ai-je besoin d'un logiciel spécial pour écrire du HTML et du CSS ?</dt>
+    <dd>Non, un simple éditeur de texte suffit, mais des éditeurs comme Visual Studio Code rendent l'écriture bien plus confortable grâce à la coloration syntaxique et à l'auto-complétion.</dd>
+
+    <dt>Le HTML et le CSS suffisent-ils pour créer un site complet ?</dt>
+    <dd>Ils suffisent pour un site statique (qui affiche toujours le même contenu). Pour un site qui réagit aux actions de l'utilisateur ou qui gère des données, il faudra ensuite apprendre JavaScript, puis éventuellement un langage côté serveur.</dd>
+
+    <dt>Combien de temps faut-il pour apprendre les bases ?</dt>
+    <dd>Les bases peuvent s'acquérir en quelques semaines de pratique régulière. La vraie maîtrise, elle, vient avec le temps et surtout avec la pratique de vrais projets.</dd>
+
+    <dt>Que faire si mon code ne s'affiche pas comme prévu ?</dt>
+    <dd>Ouvrez les outils de développement de votre navigateur (touche F12) : ils permettent de voir le code réellement interprété et d'identifier rapidement une balise mal fermée ou une règle CSS qui ne s'applique pas comme attendu.</dd>
+</dl>
+
+<h1 class="couleur" id="exercices"><strong>Exercices pratiques</strong></h1>
+<ol>
+    <li>Créez une page HTML5 avec un <span>&lt;header&gt;</span>, un <span>&lt;main&gt;</span> et un <span>&lt;footer&gt;</span>, chacun contenant un texte simple.</li>
+    <li>Ajoutez un formulaire de contact avec un champ nom, un champ email et un bouton d'envoi.</li>
+    <li>Créez un tableau récapitulatif de vos trois matières préférées avec leur note.</li>
+    <li>En CSS, mettez tous les titres <span>h1</span> en couleur bleue et centrés.</li>
+    <li>Utilisez Flexbox pour aligner trois blocs côte à côte, espacés régulièrement.</li>
+    <li>Ajoutez une media query qui empile ces trois blocs verticalement sur petit écran.</li>
+</ol>
+
+<p class="message">Nous écrire un message : <a href="mailto:jeanulrichouattara21@gmail.com">un mail</a></p>
+
+<video controls preload="auto" poster="Awesome%20Animals.jpg" width="380">
+    <source src="Awesome%20Animals.mp4" type="video/mp4">
+    <source src="Awesome%20Animals.webm" type="video/webm">
+    <source src="Awesome%20Animals.ogg" type="video/ogg">
+    Votre navigateur ne prend pas en charge la lecture de vidéos.
+</video>
+
+<p>Au revoir ! C'était un plaisir.</p>
+
+</body>
+</html>
+
+<!-- Je précise que ce site est en cours de construction et que je suis ouvert à toute critique ou suggestion pour l'améliorer.
+     N'hésitez pas à me contacter par mail pour toute question ou commentaire. Merci de votre visite. -->
