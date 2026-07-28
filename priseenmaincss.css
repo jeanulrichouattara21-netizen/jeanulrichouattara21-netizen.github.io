@@ -11,7 +11,7 @@ header {
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: center center, top left, top right;
     background-size: 33% 100%, 33% 100%, 33% 100%;
-    background-attachment: fixed, fixed, fixed;
+    background-attachment: scroll, scroll, scroll;
     display: flex;
     align-items: center;
     justify-content: center;
